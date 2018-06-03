@@ -1,0 +1,46 @@
+@import 'https://unpkg.com/svbstrate@4.1.0/dist/svbstrate.css';
+
+.slider {
+  width: 800px;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    border: 4px dashed #ff4567;
+  }
+
+  > div {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      border: 4px dotted white;
+    }
+  }
+}
+.slide {
+  padding-top: 66.66666%;
+  img {
+    object-fit: cover;
+  }
+}
+.prev, .next {
+  height: 50px;
+  width: 80px;
+  background: transparent;
+  color: white;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.prev {
+  transform: rotate(180deg);
+}
+.next {
+  right: 0;
+}
