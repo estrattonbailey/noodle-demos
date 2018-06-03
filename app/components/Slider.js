@@ -1,19 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
-import noodle from '../../../index.js'
-
-function Button ({ prev, next, ...props }) {
-  return (
-    <button {...props} className={cx('abs top bottom ma', {
-      'prev': prev,
-      'next': next
-    })}>
-      <svg className='abs fill ma' viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentcolor" strokeWidth="3">
-        <path d="M5 1.0606601717798212 L11.939339828220179 8 L5 14.939339828220179" />
-      </svg>
-    </button>
-  )
-}
+import noodle from 'noodle'
+import Button from './Button.js'
 
 export default class Slider extends React.Component {
   constructor (props) {
@@ -34,13 +22,13 @@ export default class Slider extends React.Component {
     const { children, className } = this.props
 
     return (
-      <div className='x rel' style={{ overflow: 'hidden' }}>
-        <div ref={this.ref} className={cx('slider rel', className)}>
-          {children}
-        </div>
+      <div className='page-container rel f aic jcc'>
+        <div className={cx('slider-wrapper x rel', className)}>
+          <div ref={this.ref} className='slider rel x'>{children}</div>
 
-        <Button prev onClick={e => this.slider.prev()} />
-        <Button next onClick={e => this.slider.next()} />
+          <Button prev onClick={e => this.slider.prev()} />
+          <Button next onClick={e => this.slider.next()} />
+        </div>
       </div>
     )
   }

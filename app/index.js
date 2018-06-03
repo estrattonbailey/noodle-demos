@@ -26,9 +26,9 @@ function Slideshow ({ className }) {
 
 function App () {
   return (
-    <React.Fragment>
+    <div style={{ overflow: 'hidden' }}>
       <Slideshow />
-    </React.Fragment>
+    </div>
   )
 }
 

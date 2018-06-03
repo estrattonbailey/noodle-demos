@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "noodle": "^0.1.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   }
